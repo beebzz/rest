@@ -46,7 +46,7 @@ func TestBuildRequest(t *testing.T) {
 		QueryParams: queryParams,
 	}
 	req, e := BuildRequestObject(request)
-	if e != nil {
+	if e == nil {
 		t.Errorf("Rest failed to BuildRequest. Returned error: %v", e)
 	}
 	if req == nil {
