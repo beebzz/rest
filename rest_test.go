@@ -187,7 +187,7 @@ func testingAPI(t *testing.T, fn func(request Request) (*Response, error)) {
 
 	//Start Print Request
 	req, e := BuildRequestObject(request)
-	if e != nil {
+	if e == nil {
 		t.Errorf("Error during BuildRequestObject: %v", e)
 	}
 	requestDump, err := httputil.DumpRequest(req, true)
